@@ -53,7 +53,3 @@ This project logs temperature and humidity data from a DHT11 sensor connected to
     ```cpp
     #define DHTPIN 4 // GPIO pin
     ```
-
-## Code 📜
-
-```cpp
