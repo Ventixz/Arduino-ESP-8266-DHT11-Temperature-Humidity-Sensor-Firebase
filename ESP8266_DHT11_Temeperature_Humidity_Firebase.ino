@@ -8,14 +8,14 @@
 #include <NTPClient.h>
 
 // WiFi credentials
-#define WIFI_SSID "deped.gov.ph"
-#define WIFI_PASSWORD "*Chastendale2009"
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 
 // Firebase configuration
-#define API_KEY "AIzaSyCg5gpOk4WjIsnw5CoFeW5zbCliPGa2D0A"
-#define USER_EMAIL "Cherubbenson@gmail.com"
-#define USER_PASSWORD "@Himytra23"
-#define DATABASE_URL "arduino-dht11-44e1c-default-rtdb.asia-southeast1.firebasedatabase.app"
+#define API_KEY ""
+#define USER_EMAIL ""
+#define USER_PASSWORD ""
+#define DATABASE_URL ""
 
 // DHT11 Sensor Configuration
 #define DHTPIN 2 // GPIO2 (D4)
