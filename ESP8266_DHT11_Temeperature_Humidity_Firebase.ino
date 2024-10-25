@@ -130,7 +130,17 @@ void storeHistoricalData(float humidity, float temperature) {
     saveDataWithInterval("/dht11/3days", 3 * 24 * 60 * 60 * 1000, humidity, temperature);
     saveDataWithInterval("/dht11/7days", 7 * 24 * 60 * 60 * 1000, humidity, temperature);
     saveDataWithInterval("/dht11/1month", 30 * 24 * 60 * 60 * 1000, humidity, temperature);
-    saveDataWithInterval("/dht11/3months", 3 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/2month", 2 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/3month", 3 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/4month", 4 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/5month", 5 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/6month", 6 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/7month", 3 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/8month", 8 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/9months", 9 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/10month", 10 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/11month", 11 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
+    saveDataWithInterval("/dht11/12month", 12 * 30 * 24 * 60 * 60 * 1000, humidity, temperature);
 }
 
 void saveDataWithInterval(String path, unsigned long interval, float humidity, float temperature) {
@@ -140,7 +150,17 @@ void saveDataWithInterval(String path, unsigned long interval, float humidity, f
     static unsigned long lastSavedMillis3days = 0;
     static unsigned long lastSavedMillis7days = 0;
     static unsigned long lastSavedMillis1month = 0;
-    static unsigned long lastSavedMillis3months = 0;
+    static unsigned long lastSavedMillis2month = 0;
+    static unsigned long lastSavedMillis3month = 0;
+    static unsigned long lastSavedMillis4month = 0;
+    static unsigned long lastSavedMillis5month = 6000;
+    static unsigned long lastSavedMillis6month = 7000;
+    static unsigned long lastSavedMillis7month = 8000;
+    static unsigned long lastSavedMillis8month = 9000;
+    static unsigned long lastSavedMillis9month = 10000;
+    static unsigned long lastSavedMillis10month = 11000;
+    static unsigned long lastSavedMillis11month = 12000;
+    static unsigned long lastSavedMillis12month = 0;
 
     unsigned long *lastSavedMillis = nullptr;
 
@@ -156,8 +176,28 @@ void saveDataWithInterval(String path, unsigned long interval, float humidity, f
         lastSavedMillis = &lastSavedMillis7days;
     } else if (path == "/dht11/1month") {
         lastSavedMillis = &lastSavedMillis1month;
-    } else if (path == "/dht11/3months") {
-        lastSavedMillis = &lastSavedMillis3months;
+    } else if (path == "/dht11/2month") {
+        lastSavedMillis = &lastSavedMillis2month;
+    } else if (path == "/dht11/3month") {
+        lastSavedMillis = &lastSavedMillis3month;
+    } else if (path == "/dht11/4month") {
+        lastSavedMillis = &lastSavedMillis4month;
+    } else if (path == "/dht11/5month") {
+        lastSavedMillis = &lastSavedMillis5month;
+    } else if (path == "/dht11/6months") {
+        lastSavedMillis = &lastSavedMillis6month;
+    } else if (path == "/dht11/7month") {
+        lastSavedMillis = &lastSavedMillis7month;
+    } else if (path == "/dht11/8month") {
+        lastSavedMillis = &lastSavedMillis8month;
+    } else if (path == "/dht11/9month") {
+        lastSavedMillis = &lastSavedMillis9month;
+    } else if (path == "/dht11/10month") {
+        lastSavedMillis = &lastSavedMillis10month;
+    } else if (path == "/dht11/11month") {
+        lastSavedMillis = &lastSavedMillis11month;.
+    } else if (path == "/dht11/12month") {
+        lastSavedMillis = &lastSavedMillis12month;
     }
 
     if (millis() - *lastSavedMillis >= interval || *lastSavedMillis == 0) {
